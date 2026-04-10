@@ -7,6 +7,16 @@ app.use(express.json());
 app.get('/hola', (req, res) => {
  res.json({ mensaje: '¡Hola Mundo desde Express!' });
 });
+
+app.get('/metros/:num', (req, res) => {
+    const num = req.params.num
+    const pies = num * 3.28
+    res.json({ mensaje:`'¡Hola, ${num} metros son ${pies} pies!` });
+});
+
+
+
+
 // Iniciar el servidor
 app.listen(PORT, () => {
  console.log(`Servidor corriendo en http://localhost:${PORT}`);
